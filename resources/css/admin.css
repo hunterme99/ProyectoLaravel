@@ -1,0 +1,452 @@
+/* ============================
+   PALETA DE COLORES
+   ============================ */
+/*
+Beige claro: #faf6ef
+Beige medio: #ede3d2
+Marrón suave: #a68b6a
+Marrón oscuro: #6b5642
+Texto principal: #4a3b2a
+*/
+
+/* ============================
+   RESETEO BÁSICO
+   ============================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", "Segoe UI", Arial, sans-serif;
+    background: #faf6ef;
+    color: #4a3b2a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ============================
+   CONTENEDOR GENERAL
+   ============================ */
+main,
+.contenedor {
+    width: 90%;
+    max-width: 1100px;
+    background: #ffffff;
+    padding: 30px;
+    margin-top: 25px;
+    border-radius: 12px;
+    border: 1px solid #ede3d2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* ============================
+   HEADER
+   ============================ */
+header {
+    width: 100%;
+    max-width: 1100px;
+    background: #ede3d2;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid #e0d2b8;
+}
+
+header h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #4a3b2a;
+}
+
+header form button {
+    background: #6b5642;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+header form button:hover {
+    background: #4a3b2a;
+}
+
+/* ============================
+   MENÚ DE NAVEGACIÓN
+   ============================ */
+nav {
+    width: 100%;
+    max-width: 1100px;
+    margin-top: 15px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 15px;
+    background: #a68b6a;
+    border-radius: 10px;
+}
+
+nav ul li a {
+    color: #faf6ef;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 6px 10px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ede3d2;
+}
+
+/* ============================
+   ENLACES GENERALES
+   ============================ */
+a {
+    color: #6b5642;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    color: #a68b6a;
+    text-decoration: underline;
+}
+
+/* ============================
+   FICHAS DE RECETAS
+   ============================ */
+.receta-card {
+    background: #ffffff;
+    border: 1px solid #ede3d2;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.receta-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.receta-card h2 {
+    color: #6b5642;
+    margin-bottom: 8px;
+}
+
+.receta-card p {
+    margin-bottom: 10px;
+    color: #4a3b2a;
+}
+
+/* ============================
+   BOTONES
+   ============================ */
+button,
+a.boton {
+    background: #a68b6a;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 10px;
+    transition: background 0.3s ease;
+}
+
+button:hover,
+a.boton:hover {
+    background: #6b5642;
+}
+
+/* ============================
+   GRUPOS DE BOTONES
+   ============================ */
+.botones {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* ============================
+   MODAL PERSONALIZADO
+   ============================ */
+#modal-confirmacion {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal-confirmacion.visible {
+    display: flex;
+}
+
+.modal-contenido {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    width: 320px;
+    text-align: center;
+    border: 1px solid #a68b6a;
+}
+
+.modal-botones {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#modal-si {
+    background: #b33a3a;
+}
+
+#modal-no {
+    background: #6b5642;
+}
+
+/* ============================
+   FICHAS DE RECETAS (mejoradas)
+   ============================ */
+.receta-card {
+    background: #ffffff;
+    border: 1px solid #ede3d2;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.receta-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.receta-card h2 {
+    color: #6b5642;
+    margin-bottom: 10px;
+}
+
+.receta-card p {
+    margin-bottom: 15px;
+    color: #4a3b2a;
+}
+
+/* ============================
+   BOTONES (espaciado mejorado)
+   ============================ */
+.botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    /* espacio horizontal y vertical */
+    margin-top: 15px;
+}
+
+button,
+a.boton {
+    background: #a68b6a;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover,
+a.boton:hover {
+    background: #6b5642;
+    transform: scale(1.05);
+}
+
+/* ============================
+   ENLACES (más elegantes)
+   ============================ */
+a {
+    color: #6b5642;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+a:hover {
+    color: #a68b6a;
+    text-shadow: 0 0 1px #a68b6a;
+}
+
+/* ============================
+   PALETA DE COLORES
+   ============================ */
+/*
+Beige claro: #faf6ef
+Beige medio: #ede3d2
+Marrón suave: #a68b6a
+Marrón oscuro: #6b5642
+Texto principal: #4a3b2a
+*/
+
+/* ============================
+   RESETEO BÁSICO
+   ============================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", Arial, sans-serif;
+    background: #faf6ef;
+    color: #4a3b2a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ============================
+   TITULOS
+   ============================ */
+h1,
+h2 {
+    color: #6b5642;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* ============================
+   ENLACES
+   ============================ */
+a {
+    color: #6b5642;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 4px 6px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+a:hover {
+    color: #a68b6a;
+    text-shadow: 0 0 1px #a68b6a;
+}
+
+/* ============================
+   BOTONES
+   ============================ */
+button,
+input[type="submit"],
+input[type="button"] {
+    background: #a68b6a;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    margin: 5px 8px;
+    /* separación horizontal y vertical */
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+    background: #6b5642;
+    transform: scale(1.05);
+}
+
+/* ============================
+   CONTENEDORES GENERALES
+   ============================ */
+main,
+section,
+article,
+div {
+    margin-bottom: 20px;
+}
+
+/* ============================
+   TARJETAS AUTOMÁTICAS
+   ============================ */
+article,
+section {
+    background: #ffffff;
+    border: 1px solid #ede3d2;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+article:hover,
+section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* ============================
+   TABLAS
+   ============================ */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th {
+    background: #a68b6a;
+    color: white;
+    padding: 12px;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #ede3d2;
+}
+
+tr:nth-child(even) {
+    background: #faf6ef;
+}
+
+/* ============================
+   FORMULARIOS
+   ============================ */
+label {
+    font-weight: 600;
+    margin-top: 10px;
+    display: block;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    margin-bottom: 18px;
+    border: 1px solid #a68b6a;
+    border-radius: 8px;
+    background: #fffdf8;
+}
+
+textarea {
+    height: 130px;
+}
