@@ -1,26 +1,52 @@
 @extends('layouts.app')
 @vite(['resources/css/admin.css', 'resources/js/admin.js'])
+
 @section('content')
-    <h1>{{ $receta->titulo }}</h1>
 
-    @if($receta->imagen)
-        <img src="{{ asset('storage/' . $receta->imagen) }}" width="300">
-    @endif
+    <div class="receta-show-container">
 
-    <p>{{ $receta->descripcion }}</p>
+        {{-- TÍTULO --}}
+        <h1 class="receta-titulo">{{ $receta->titulo }}</h1>
 
-    <h3>Ingredientes</h3>
-    <ul>
-        @foreach($receta->ingredientes as $ing)
-            <li>{{ $ing->nombre }}</li>
-        @endforeach
-    </ul>
+        {{-- IMAGEN PRINCIPAL --}}
+        @if($receta->imagen)
+            <div class="receta-imagen-container">
+                <img src="/storage/{{ $receta->imagen }}" class="receta-imagen-grande">
+            </div>
+        @endif
 
-    <h3>Pasos</h3>
-    <ol>
-        @foreach($receta->pasos as $paso)
-            <li>{{ $paso->descripcion }}</li>
-        @endforeach
-    </ol>
+        {{-- DESCRIPCIÓN --}}
+        <section class="receta-seccion">
+            <h2 class="receta-subtitulo">Descripción</h2>
+            <p class="receta-descripcion">{{ $receta->descripcion }}</p>
+        </section>
+
+        {{-- INGREDIENTES --}}
+        <section class="receta-seccion">
+            <h2 class="receta-subtitulo">Ingredientes</h2>
+            <ul class="receta-lista">
+                @foreach($receta->ingredientes as $ing)
+                    <li>{{ $ing->nombre }}</li>
+                @endforeach
+            </ul>
+        </section>
+
+        {{-- PASOS --}}
+        <section class="receta-seccion">
+            <h2 class="receta-subtitulo">Pasos</h2>
+            <ol class="receta-lista">
+                @foreach($receta->pasos as $paso)
+                    <li>{{ $paso->descripcion }}</li>
+                @endforeach
+            </ol>
+        </section>
+
+        <form action="{{ route('recetas.enviarPDF', $receta->id) }}" method="POST">
+            @csrf
+            <button type="submit" class="boton">Enviar PDF al correo</button>
+        </form>
+
+
+    </div>
 
 @endsection

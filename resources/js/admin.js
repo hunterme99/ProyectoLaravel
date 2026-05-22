@@ -1,6 +1,12 @@
+console.log("ADMIN JS CARGADO");
+
+
 document.addEventListener("DOMContentLoaded", () => {
 
-    // Crear modal
+    // ============================
+    // MODAL DE CONFIRMACIÓN
+    // ============================
+
     const modal = document.createElement("div");
     modal.id = "modal-confirmacion";
     modal.innerHTML = `
@@ -16,7 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let formularioPendiente = null;
 
-    // Activar modal en formularios con data-confirmar
     document.querySelectorAll("form[data-confirmar]").forEach(form => {
         form.addEventListener("submit", e => {
             e.preventDefault();
@@ -29,29 +34,49 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Botón Sí
     document.getElementById("modal-si").addEventListener("click", () => {
         modal.classList.remove("visible");
         if (formularioPendiente) formularioPendiente.submit();
     });
 
-    // Botón No
     document.getElementById("modal-no").addEventListener("click", () => {
         modal.classList.remove("visible");
         formularioPendiente = null;
     });
 
-    document.addEventListener("DOMContentLoaded", () => {
 
-        // Leer el rol desde un meta tag
-        const rol = document.querySelector('meta[name="rol-usuario"]').content;
+    // ============================
+    // OCULTAR ELEMENTOS SEGÚN ROL
+    // ============================
+
+    const metaRol = document.querySelector('meta[name="rol-usuario"]');
+    if (metaRol) {
+        const rol = metaRol.content;
 
         if (rol !== "admin") {
             document.querySelectorAll('[data-admin="true"]').forEach(el => {
                 el.style.display = "none";
             });
         }
+    }
 
+    document.addEventListener("DOMContentLoaded", () => {
+        const msg = document.getElementById("flash-message");
+
+        if (msg) {
+            setTimeout(() => {
+                msg.style.transition = "opacity 0.8s ease";
+                msg.style.opacity = "0";
+
+                setTimeout(() => {
+                    if (msg.parentNode) {
+                        msg.parentNode.removeChild(msg);
+                    }
+                }, 800);
+            }, 3000);
+        }
     });
+
+
 
 });

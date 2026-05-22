@@ -1,34 +1,60 @@
 @extends('layouts.app')
 @vite(['resources/css/admin.css', 'resources/js/admin.js'])
+
 @section('content')
-    <h1>{{ $publicacion->titulo }}</h1>
 
-    <p>{{ $publicacion->contenido }}</p>
-    <small>Por: {{ $publicacion->usuario->nombre }}</small>
+    {{-- TARJETA PRINCIPAL DEL POST --}}
+    <div class="foro-post-card">
 
-    <hr>
+        <div class="foro-header">
+            <div class="foro-avatar">
+                {{ strtoupper(substr($publicacion->usuario->nombre, 0, 1)) }}
+            </div>
 
-    <h3>Respuestas</h3>
-
-    @foreach($publicacion->respuestas as $resp)
-        <div style="border:1px solid #ddd; padding:10px; margin:10px 0;">
-            <p>{{ $resp->comentario }}</p>
-            <small>Por: {{ $resp->usuario->nombre }}</small>
+            <div class="foro-header-info">
+                <strong>{{ $publicacion->usuario->nombre }}</strong>
+                <small>{{ $publicacion->fecha }}</small>
+            </div>
         </div>
-    @endforeach
 
-    <hr>
+        <h1 class="foro-titulo">{{ $publicacion->titulo }}</h1>
 
-    <h3>Responder</h3>
+        <p class="foro-contenido-detalle">{{ $publicacion->contenido }}</p>
+    </div>
 
-    <form action="{{ route('foro.responder', $publicacion->id) }}" method="POST">
+    {{-- RESPUESTAS --}}
+    <h3 class="foro-respuestas-titulo">Respuestas</h3>
+
+    <div class="foro-respuestas">
+        @foreach($publicacion->respuestas as $resp)
+            <div class="foro-respuesta-card">
+
+                <div class="foro-header">
+                    <div class="foro-avatar">
+                        {{ strtoupper(substr($resp->usuario->nombre, 0, 1)) }}
+                    </div>
+
+                    <div class="foro-header-info">
+                        <strong>{{ $resp->usuario->nombre }}</strong>
+                        <small>{{ $resp->fecha }}</small>
+                    </div>
+                </div>
+
+                <p class="foro-respuesta-texto">{{ $resp->comentario }}</p>
+            </div>
+        @endforeach
+    </div>
+
+    {{-- FORMULARIO --}}
+    <h3 class="foro-responder-titulo">Responder</h3>
+
+    <form action="{{ route('foro.responder', $publicacion->id) }}" method="POST" class="foro-responder">
         @csrf
 
         <label for="comentario">Escribe tu respuesta:</label>
-        <textarea id="comentario" name="comentario" required style="width:100%; height:120px; resize:vertical;"></textarea>
+        <textarea id="comentario" name="comentario" required></textarea>
 
-        <br><br>
-        <button type="submit">Enviar</button>
+        <button type="submit" class="boton">Enviar</button>
     </form>
 
 @endsection

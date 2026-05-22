@@ -14,7 +14,7 @@ class Receta extends Model
         'titulo',
         'descripcion',
         'fecha_creacion',
-        'tiempo',
+        'imagen',
         'dificultad',
         'id_usuario',
         'id_categoria'

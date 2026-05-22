@@ -1,311 +1,12 @@
-/* ============================
-   PALETA DE COLORES
-   ============================ */
-/*
-Beige claro: #faf6ef
-Beige medio: #ede3d2
-Marrón suave: #a68b6a
-Marrón oscuro: #6b5642
-Texto principal: #4a3b2a
-*/
-
-/* ============================
-   RESETEO BÁSICO
-   ============================ */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+    --beige-claro: #faf6ef;
+    --beige-medio: #ede3d2;
+    --marron-suave: #a68b6a;
+    --marron-clarito: #e2c9a6;
+    --marron-oscuro: #6b5642;
+    --texto: #4a3b2a;
 }
 
-body {
-    font-family: "Roboto", "Segoe UI", Arial, sans-serif;
-    background: #faf6ef;
-    color: #4a3b2a;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* ============================
-   CONTENEDOR GENERAL
-   ============================ */
-main,
-.contenedor {
-    width: 90%;
-    max-width: 1100px;
-    background: #ffffff;
-    padding: 30px;
-    margin-top: 25px;
-    border-radius: 12px;
-    border: 1px solid #ede3d2;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-/* ============================
-   HEADER
-   ============================ */
-header {
-    width: 100%;
-    max-width: 1100px;
-    background: #ede3d2;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 12px;
-    text-align: center;
-    border: 1px solid #e0d2b8;
-}
-
-header h1 {
-    font-size: 28px;
-    margin-bottom: 10px;
-    color: #4a3b2a;
-}
-
-header form button {
-    background: #6b5642;
-    color: white;
-    padding: 8px 14px;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-}
-
-header form button:hover {
-    background: #4a3b2a;
-}
-
-/* ============================
-   MENÚ DE NAVEGACIÓN
-   ============================ */
-nav {
-    width: 100%;
-    max-width: 1100px;
-    margin-top: 15px;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    padding: 15px;
-    background: #a68b6a;
-    border-radius: 10px;
-}
-
-nav ul li a {
-    color: #faf6ef;
-    text-decoration: none;
-    font-weight: 500;
-    padding: 6px 10px;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #ede3d2;
-}
-
-/* ============================
-   ENLACES GENERALES
-   ============================ */
-a {
-    color: #6b5642;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-a:hover {
-    color: #a68b6a;
-    text-decoration: underline;
-}
-
-/* ============================
-   FICHAS DE RECETAS
-   ============================ */
-.receta-card {
-    background: #ffffff;
-    border: 1px solid #ede3d2;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.receta-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-}
-
-.receta-card h2 {
-    color: #6b5642;
-    margin-bottom: 8px;
-}
-
-.receta-card p {
-    margin-bottom: 10px;
-    color: #4a3b2a;
-}
-
-/* ============================
-   BOTONES
-   ============================ */
-button,
-a.boton {
-    background: #a68b6a;
-    color: white;
-    padding: 10px 16px;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    margin-right: 10px;
-    transition: background 0.3s ease;
-}
-
-button:hover,
-a.boton:hover {
-    background: #6b5642;
-}
-
-/* ============================
-   GRUPOS DE BOTONES
-   ============================ */
-.botones {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-/* ============================
-   MODAL PERSONALIZADO
-   ============================ */
-#modal-confirmacion {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.55);
-    display: none;
-    justify-content: center;
-    align-items: center;
-}
-
-#modal-confirmacion.visible {
-    display: flex;
-}
-
-.modal-contenido {
-    background: #ffffff;
-    padding: 25px;
-    border-radius: 12px;
-    width: 320px;
-    text-align: center;
-    border: 1px solid #a68b6a;
-}
-
-.modal-botones {
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-around;
-}
-
-#modal-si {
-    background: #b33a3a;
-}
-
-#modal-no {
-    background: #6b5642;
-}
-
-/* ============================
-   FICHAS DE RECETAS (mejoradas)
-   ============================ */
-.receta-card {
-    background: #ffffff;
-    border: 1px solid #ede3d2;
-    border-radius: 10px;
-    padding: 25px;
-    margin-bottom: 25px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.receta-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-}
-
-.receta-card h2 {
-    color: #6b5642;
-    margin-bottom: 10px;
-}
-
-.receta-card p {
-    margin-bottom: 15px;
-    color: #4a3b2a;
-}
-
-/* ============================
-   BOTONES (espaciado mejorado)
-   ============================ */
-.botones {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    /* espacio horizontal y vertical */
-    margin-top: 15px;
-}
-
-button,
-a.boton {
-    background: #a68b6a;
-    color: white;
-    padding: 10px 18px;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 0.3s ease, transform 0.2s ease;
-}
-
-button:hover,
-a.boton:hover {
-    background: #6b5642;
-    transform: scale(1.05);
-}
-
-/* ============================
-   ENLACES (más elegantes)
-   ============================ */
-a {
-    color: #6b5642;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-a:hover {
-    color: #a68b6a;
-    text-shadow: 0 0 1px #a68b6a;
-}
-
-/* ============================
-   PALETA DE COLORES
-   ============================ */
-/*
-Beige claro: #faf6ef
-Beige medio: #ede3d2
-Marrón suave: #a68b6a
-Marrón oscuro: #6b5642
-Texto principal: #4a3b2a
-*/
-
-/* ============================
-   RESETEO BÁSICO
-   ============================ */
 * {
     margin: 0;
     padding: 0;
@@ -314,119 +15,185 @@ Texto principal: #4a3b2a
 
 body {
     font-family: "Roboto", Arial, sans-serif;
-    background: #faf6ef;
-    color: #4a3b2a;
+    background: var(--beige-claro);
+    color: var(--texto);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* ============================
-   TITULOS
-   ============================ */
 h1,
 h2 {
-    color: #6b5642;
+    color: var(--marron-oscuro);
     margin-bottom: 15px;
     font-weight: 600;
 }
 
-/* ============================
-   ENLACES
-   ============================ */
 a {
-    color: #6b5642;
+    color: var(--marron-oscuro);
     text-decoration: none;
     font-weight: 500;
     padding: 4px 6px;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
+    transition: color .3s ease, text-shadow .3s ease;
 }
 
 a:hover {
-    color: #a68b6a;
-    text-shadow: 0 0 1px #a68b6a;
+    color: var(--marron-suave);
+    text-shadow: 0 0 1px var(--marron-suave);
 }
 
-/* ============================
-   BOTONES
-   ============================ */
-button,
-input[type="submit"],
-input[type="button"] {
-    background: #a68b6a;
-    color: white;
-    padding: 10px 18px;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    margin: 5px 8px;
-    /* separación horizontal y vertical */
-    transition: background 0.3s ease, transform 0.2s ease;
-}
-
-button:hover,
-input[type="submit"]:hover,
-input[type="button"]:hover {
-    background: #6b5642;
-    transform: scale(1.05);
-}
-
-/* ============================
-   CONTENEDORES GENERALES
-   ============================ */
-main,
-section,
-article,
-div {
-    margin-bottom: 20px;
-}
-
-/* ============================
-   TARJETAS AUTOMÁTICAS
-   ============================ */
-article,
-section {
-    background: #ffffff;
-    border: 1px solid #ede3d2;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-article:hover,
-section:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-}
-
-/* ============================
-   TABLAS
-   ============================ */
-table {
+/* Fondo beige general */
+.header {
+    background: var(--beige-claro);
+    padding: 12px 0;
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid #d2b48c;
 }
 
-th {
-    background: #a68b6a;
+/* Franja marrón suave */
+.header-bar {
+    background: var(--marron-suave);
+    width: 100%;
+    padding: 12px 0;
+    display: flex;
+    justify-content: center;
+}
+
+/* Contenedor marrón clarito */
+.nav {
+    background: var(--marron-clarito);
+    padding: 12px 22px;
+    border-radius: 10px;
+    width: 95%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Lista de botones */
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    width: 100%;
+}
+
+/* Botones */
+.nav-item a,
+.nav-item form button {
+    background: #fff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    color: #5a3e1b;
+    font-weight: bold;
+    border: 1px solid #d8c4a3;
+    transition: .2s;
+}
+
+.nav-item a:hover,
+.nav-item form button:hover {
+    background: #f0d9b5;
+}
+
+/* Panel admin a la izquierda */
+.nav-admin {
+    margin-right: auto;
+}
+
+.nav-admin a {
+    background: #ffe9c6;
+    border-color: #d4a46a;
+}
+
+/* Botón cerrar sesión */
+.btn-logout {
+    background: var(--marron-oscuro) !important;
+    color: white !important;
+    border: none !important;
+}
+
+.btn-logout:hover {
+    background: #3e2a15 !important;
+}
+
+main,
+.contenedor {
+    width: 90%;
+    max-width: 1100px;
+    background: #fff;
+    padding: 30px;
+    margin-top: 25px;
+    border-radius: 12px;
+    border: 1px solid var(--beige-medio);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .05);
+}
+
+.recetas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.receta-card {
+    background: #fff;
+    border: 1px solid var(--beige-medio);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .05);
+    transition: .2s;
+    text-align: center;
+}
+
+.receta-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .08);
+}
+
+.receta-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+#ingredientes,
+#pasos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+}
+
+.ingrediente-item,
+.paso-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-ingrediente,
+.input-paso {
+    width: 100%;
+    max-width: 500px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.boton-eliminar {
+    padding: 6px 10px;
+    background: #c0392b;
     color: white;
-    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
-td {
-    padding: 12px;
-    border-bottom: 1px solid #ede3d2;
-}
-
-tr:nth-child(even) {
-    background: #faf6ef;
-}
-
-/* ============================
-   FORMULARIOS
-   ============================ */
 label {
     font-weight: 600;
     margin-top: 10px;
@@ -442,7 +209,7 @@ textarea {
     padding: 10px;
     margin-top: 6px;
     margin-bottom: 18px;
-    border: 1px solid #a68b6a;
+    border: 1px solid var(--marron-suave);
     border-radius: 8px;
     background: #fffdf8;
 }
@@ -450,3 +217,757 @@ textarea {
 textarea {
     height: 130px;
 }
+
+button,
+a.boton {
+    background: var(--marron-suave);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover,
+a.boton:hover {
+    background: var(--marron-oscuro);
+    transform: scale(1.05);
+}
+
+.botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+#modal-confirmacion {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .55);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal-confirmacion.visible {
+    display: flex;
+}
+
+.modal-contenido {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    width: 320px;
+    text-align: center;
+    border: 1px solid var(--marron-suave);
+}
+
+.modal-botones {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#modal-si {
+    background: #b33a3a;
+}
+
+#modal-no {
+    background: var(--marron-oscuro);
+}
+
+.foro-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.foro-card,
+.foro-post-card {
+    background: #fff;
+    border: 1px solid var(--beige-medio);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .05);
+    transition: .2s;
+}
+
+.foro-card:hover,
+.foro-post-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .08);
+}
+
+.foro-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.foro-avatar {
+    width: 50px;
+    height: 50px;
+    background: var(--marron-suave);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.foro-contenido,
+.foro-contenido-detalle {
+    color: var(--texto);
+    line-height: 1.5;
+}
+
+.foro-respuestas {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.foro-respuesta-card {
+    background: #fffdf8;
+    border: 1px solid var(--beige-medio);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* ============================
+   SHOW DE RECETA — AJUSTES FINALES
+   ============================ */
+
+/* Contenedor general del show */
+.receta-show-container {
+    max-width: 900px;
+    width: 95%;
+    margin: 0 auto;
+    background: #fffdf8;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+/* Imagen principal — tamaño controlado */
+.receta-imagen-grande {
+    width: 100%;
+    max-width: 450px;
+    /* antes 600px → demasiado grande */
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+/* Título de la receta */
+.receta-titulo {
+    text-align: center;
+    font-size: 2rem;
+    /* antes 2.4rem → demasiado grande */
+    margin-bottom: 20px;
+    color: #8b4513;
+    font-weight: bold;
+}
+
+/* Secciones (Descripción, Ingredientes, Pasos) */
+.receta-seccion {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    border-left: 6px solid #d28b36;
+    /* línea lateral para diferenciar */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* Subtítulos de cada sección */
+.receta-subtitulo {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    color: #b05a1e;
+    font-weight: bold;
+}
+
+/* Texto de descripción */
+.receta-descripcion {
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+/* Listas de ingredientes y pasos */
+.receta-lista {
+    font-size: 1.05rem;
+    margin-left: 20px;
+    line-height: 1.7;
+}
+
+/* ============================
+   PANEL ADMINISTRADOR  
+   ============================ */
+
+/* Contenedor general del panel */
+.panel-admin-container {
+    width: 95%;
+    max-width: 1200px;
+    margin: 30px auto;
+    display: flex;
+    gap: 25px;
+}
+
+/* ============================
+   MENÚ LATERAL
+   ============================ */
+.panel-admin-menu {
+    width: 250px;
+    background: #fffdf8;
+    border: 1px solid var(--beige-medio);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
+    height: fit-content;
+}
+
+.panel-admin-menu h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--marron-oscuro);
+    text-align: center;
+}
+
+.panel-admin-menu ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.panel-admin-menu li a {
+    background: #fff;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--beige-medio);
+    color: var(--marron-oscuro);
+    font-weight: 600;
+    display: block;
+    transition: .2s;
+}
+
+.panel-admin-menu li a:hover {
+    background: #f0d9b5;
+}
+
+/* ============================
+   CONTENIDO PRINCIPAL
+   ============================ */
+.panel-admin-content {
+    flex: 1;
+    background: #ffffff;
+    border: 1px solid var(--beige-medio);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
+}
+
+.panel-admin-title {
+    font-size: 1.8rem;
+    color: var(--marron-oscuro);
+    margin-bottom: 20px;
+    font-weight: bold;
+    border-left: 6px solid #d28b36;
+    padding-left: 12px;
+}
+
+/* ============================
+   TABLA DE GESTIÓN
+   ============================ */
+.panel-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.panel-table th {
+    background: var(--marron-suave);
+    color: white;
+    padding: 12px;
+    font-size: 1rem;
+}
+
+.panel-table td {
+    padding: 12px;
+    border-bottom: 1px solid var(--beige-medio);
+    font-size: 0.95rem;
+}
+
+.panel-table tr:nth-child(even) {
+    background: #faf6ef;
+}
+
+.panel-table tr:hover {
+    background: #f3e7d7;
+}
+
+/* Botones de acciones */
+.panel-actions a,
+.panel-actions form button {
+    background: var(--marron-suave);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: .2s;
+    margin-right: 8px;
+}
+
+.panel-actions a:hover,
+.panel-actions form button:hover {
+    background: var(--marron-oscuro);
+}
+
+/* ============================
+   TABLAS ADMIN 
+   ============================ */
+
+.panel-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    /* separación entre filas */
+    margin-top: 20px;
+}
+
+.panel-table thead tr {
+    background: var(--marron-suave);
+    color: white;
+}
+
+.panel-table th {
+    padding: 14px;
+    font-size: 1rem;
+    text-align: left;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Filas */
+.panel-table tbody tr {
+    background: #ffffff;
+    border: 1px solid var(--beige-medio);
+    border-radius: 10px;
+    transition: .2s ease;
+}
+
+.panel-table tbody tr:hover {
+    background: #f7efe2;
+    transform: translateX(4px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
+}
+
+.panel-table td {
+    padding: 14px;
+    font-size: 0.95rem;
+    color: var(--texto);
+}
+
+/* Bordes redondeados */
+.panel-table tbody tr td:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.panel-table tbody tr td:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* ============================
+   BOTONES DE ACCIÓN
+   ============================ */
+
+.panel-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.panel-actions a,
+.panel-actions form button {
+    background: var(--marron-suave);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .2s ease;
+}
+
+.panel-actions a:hover,
+.panel-actions form button:hover {
+    background: var(--marron-oscuro);
+    transform: scale(1.05);
+}
+
+.btn-desactivar {
+    background: #c27a1a !important;
+}
+
+.btn-desactivar:hover {
+    background: #8a550f !important;
+}
+
+.btn-eliminar {
+    background: #b33a3a !important;
+}
+
+.btn-eliminar:hover {
+    background: #8a2a2a !important;
+}
+
+/* ============================
+   PANEL USUARIO 
+   ============================ */
+
+.panel-usuario-container {
+    width: 95%;
+    max-width: 1100px;
+    margin: 30px auto;
+    display: flex;
+    gap: 25px;
+}
+
+/* MENÚ LATERAL */
+.panel-usuario-menu {
+    width: 230px;
+    background: #fffdf8;
+    border: 1px solid var(--beige-medio);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
+    height: fit-content;
+}
+
+.panel-usuario-menu h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--marron-oscuro);
+    text-align: center;
+}
+
+.panel-usuario-menu ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.panel-usuario-menu li a {
+    background: #fff;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--beige-medio);
+    color: var(--marron-oscuro);
+    font-weight: 600;
+    display: block;
+    transition: .2s;
+}
+
+.panel-usuario-menu li a:hover {
+    background: #f0d9b5;
+}
+
+/* CONTENIDO PRINCIPAL */
+.panel-usuario-content {
+    flex: 1;
+    background: #ffffff;
+    border: 1px solid var(--beige-medio);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
+}
+
+.panel-usuario-title {
+    font-size: 1.8rem;
+    color: var(--marron-oscuro);
+    margin-bottom: 20px;
+    font-weight: bold;
+    border-left: 6px solid #d28b36;
+    padding-left: 12px;
+}
+
+/* TARJETA DE INICIO */
+.panel-usuario-card {
+    background: #fffdf8;
+    border: 1px solid var(--beige-medio);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .05);
+    text-align: center;
+}
+
+.panel-usuario-card p {
+    font-size: 1.1rem;
+    color: var(--texto);
+}
+
+/* ============================
+   PANEL USUARIO — HEADER
+   ============================ */
+
+.usuario-header {
+    width: 100%;
+    background: var(--beige-claro);
+    border-bottom: 2px solid #d2b48c;
+    padding: 15px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.usuario-header-titulo {
+    font-size: 1.8rem;
+    color: var(--marron-oscuro);
+}
+
+.usuario-header-info {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    font-size: 0.95rem;
+}
+
+.usuario-btn-logout {
+    background: var(--marron-oscuro);
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.usuario-btn-logout:hover {
+    background: #3e2a15;
+}
+
+/* ============================
+   PANEL USUARIO — NAV
+   ============================ */
+
+.usuario-nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: var(--marron-suave);
+    padding: 10px 0;
+}
+
+.usuario-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 18px;
+}
+
+.usuario-nav a {
+    background: #fff;
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--beige-medio);
+    color: #5a3e1b;
+    font-weight: 600;
+    text-decoration: none;
+    transition: .2s;
+}
+
+.usuario-nav a:hover {
+    background: #f0d9b5;
+}
+
+/* ============================
+   PANEL USUARIO — MAIN
+   ============================ */
+
+.usuario-main {
+    width: 95%;
+    max-width: 900px;
+    margin: 25px auto;
+    background: #ffffff;
+    border: 1px solid var(--beige-medio);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
+}
+
+/* ============================
+   BOTONES BONITOS — FORO + RECETAS
+   ============================ */
+
+/* Botones dentro de tarjetas del foro */
+.foro-card a,
+.foro-card button {
+    background: var(--marron-suave);
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: none;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: .2s ease;
+    cursor: pointer;
+}
+
+.foro-card a:hover,
+.foro-card button:hover {
+    background: var(--marron-oscuro);
+    transform: scale(1.05);
+}
+
+/* Botones dentro de tarjetas de recetas */
+.receta-card a,
+.receta-card button {
+    background: var(--marron-suave);
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: none;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: .2s ease;
+    cursor: pointer;
+}
+
+.receta-card a:hover,
+.receta-card button:hover {
+    background: var(--marron-oscuro);
+    transform: scale(1.05);
+}
+
+/* Contenedor de botones en recetas */
+.receta-card .botones {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+/* Igualar tamaño de botones <a> y <button> en recetas y foro */
+.foro-card a,
+.foro-card button,
+.receta-card a,
+.receta-card button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    font-size: 1rem;
+    line-height: 1;
+    background: var(--marron-suave);
+    color: white;
+    border-radius: 8px;
+    border: none;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .2s ease;
+    min-width: 90px;
+}
+
+.foro-card a:hover,
+.foro-card button:hover,
+.receta-card a:hover,
+.receta-card button:hover {
+    background: var(--marron-oscuro);
+    transform: scale(1.05);
+}
+
+.foro-card p {
+    margin-bottom: 12px;
+}
+
+.foro-card h3,
+.foro-card h4 {
+    margin-bottom: 8px;
+}
+
+/* ============================
+   AJUSTES DEL DETALLE DEL FORO
+   ============================ */
+
+.foro-responder textarea {
+    width: 100%;
+    max-width: 600px;
+    height: 120px;
+    resize: vertical;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--beige-medio);
+    font-size: 1rem;
+}
+
+/* Separación entre títulos */
+.foro-respuestas-titulo,
+.foro-responder-titulo {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    color: var(--marron-oscuro);
+}
+
+/* Separación del botón respecto al textarea */
+.foro-responder button {
+    margin-top: 12px;
+    padding: 10px 18px;
+    background: var(--marron-suave);
+    color: white;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: .2s ease;
+}
+
+.foro-responder button:hover {
+    background: var(--marron-oscuro);
+    transform: scale(1.05);
+}
+
+.flash {
+    padding: 12px 18px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    opacity: 1;
+    transition: opacity .8s ease;
+}
+
+.flash.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.flash.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+
+@media (max-width: 768px) {
+    .recetas-grid {
+        grid-template-columns: 1fr;
+    }
+}
+

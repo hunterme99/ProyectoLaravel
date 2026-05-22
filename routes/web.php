@@ -12,6 +12,9 @@ use App\Http\Controllers\PublicacionForoController;
 use App\Http\Controllers\RespuestaForoController;
 use App\Http\Controllers\AdminForoController;
 use App\Http\Controllers\AdminUsuarioController;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\PruebaMail;
+use App\Http\Controllers\ImagenController;
 
 
 /*
@@ -151,6 +154,19 @@ Route::middleware('auth')->group(function () {
 
     Route::post('/foro/{id}/respuesta', [RespuestaForoController::class, 'store'])->name('foro.responder');
     Route::resource('comentarios', ComentarioController::class);
+
+    Route::get('/probar-correo', function () {
+        Mail::to('rotcivsf@gmail.com')->send(new PruebaMail());
+
+        return 'Correo enviado (si no hay errores).';
+    });
+
+
+Route::post('/subir-imagen', [ImagenController::class, 'subir']);
+
+    Route::post('/recetas/{id}/enviar-pdf', [RecetaController::class, 'enviarPDF'])
+        ->name('recetas.enviarPDF');
+
 
 
 });
